@@ -15,8 +15,24 @@ class Person
   def billionaire
     money >= 1000000000
   end
-
   def money
     @money
   end
+end
+
+class Tax
+  def tax
+    1.10
+  end
+end
+
+class Price
+attr_accessor :price
+  def tax_price
+    price * Tax.new.tax
+  end
+end
+
+class Human
+attr_accessor :name
 end
